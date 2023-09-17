@@ -1,0 +1,62 @@
+-- general options that I like and such
+local opt = vim.opt
+
+-- show line number on current line
+opt.number = true
+
+-- use relative numbers by default
+opt.relativenumber = true
+
+-- highlight line
+opt.cursorline = true
+
+-- set tabstops how cthulhu intended them to be
+opt.expandtab = true
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+
+-- preserve indentation on line breaks
+opt.breakindent = true
+
+-- save undo history
+opt.undofile = true
+-- save undo history for almost infinite undoing
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+
+-- disable backups and swaps
+opt.swapfile = false
+opt.backup = false
+
+-- case-insensitive search unless capital or \C in search
+opt.ignorecase = true
+opt.smartcase = true
+
+-- keep signcolumn enabled
+opt.signcolumn = "yes"
+
+-- better completion experience
+opt.completeopt = "menuone,noselect"
+
+-- make sure colors are true :P
+opt.termguicolors = true
+
+-- make searching a little bit better, thanks to ThePrimeagean
+opt.hlsearch = false
+opt.incsearch = true
+
+-- set how many characters should always be visible below when scrolling down
+opt.scrolloff = 8
+
+-- set line length 'indicator'
+opt.colorcolumn = "100"
+
+-- I don't like ~ as end of buffer signs
+opt.fillchars = { eob = " " }
+
+-- Add filename to top of open buffer
+vim.opt.winbar = "%=%m %f"
+
+-- split windows to the right and bottom
+vim.opt.splitright = true
+vim.opt.splitbelow = true
