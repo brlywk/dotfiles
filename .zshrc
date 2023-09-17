@@ -110,4 +110,7 @@ export EDITOR=nvim
 # Auto set ruby version to 3.2.2
 chruby 3.2.2
 
+# Shell completion for 1password CLI
+eval "$(op completion zsh)"; compdef _op op
+
 # alias ohmyzsh="mate ~/.oh-my-zsh"

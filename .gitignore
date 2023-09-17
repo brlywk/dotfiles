@@ -1,1 +1,5 @@
 .DS_Store
+.git
+
+# These are symlinks anyway...
+tmux/plugins

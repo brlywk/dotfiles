@@ -75,6 +75,8 @@ return {
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
+				-- Copilot Source
+				{ name = "copilot", group_index = 2 },
 			}),
 			-- configure lspkind for vs-code like pictograms in completion menu
 			formatting = {

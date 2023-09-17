@@ -58,7 +58,7 @@ k.set("n", "N", "Nzzzv")
 k.set("x", "<leader>ow", '"_dP', { desc = "[O]ver[w]rite selection (void)" })
 
 -- When pasting over something, we keep the yanked word in our yank register
-vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste but keep yanked word" })
+vim.keymap.set("x", "<leader>rp", [["_dP]], { desc = "Paste but keep yanked word" })
 
 -- delete single characters to void
 k.set("n", "x", '"_x')
@@ -107,6 +107,8 @@ end, { desc = "Add word (cwd) to Quickfix List" })
 k.set("n", "<leader>qx", function()
 	vim.fn.setqflist({})
 end, { desc = "Clear Quickfix List" })
+
+-- TODO: Need more quickfix list commands?
 
 -- allows replacement of the current word under the cursor
 vim.keymap.set(

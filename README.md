@@ -43,6 +43,7 @@ excellent tutorials or existing configs to read and learn how things work! 🥳
 
 - [kickstart](https://github.com/nvim-lua/kickstart.nvim)
 - ThePrimeagen - [0 to LSP: Neovim RC From Scratch](https://www.youtube.com/watch?v=w7i4amO_zaE)
+- TJ DeVries - [Neovim config](https://github.com/tjdevries/config_manager/tree/master/xdg_config/nvim)
 - Josean Martinez - [How To Make Your Boring Mac Terminal So Much Better](https://www.youtube.com/watch?v=CF1tMjvHDRA)
 - Dreams of Code
   - [The Zen tmux config](https://youtube.com/watch?v=DzNmUNvnB04)
