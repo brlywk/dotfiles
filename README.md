@@ -26,8 +26,9 @@ Some necessary steps to make everything work when using macOS 🍎
 - [NeoVim](https://github.com/neovim/neovim/wiki/Installing-Neovim#homebrew-on-macos-or-linux)
 - [Alacritty](https://formulae.brew.sh/cask/alacritty)
 - [tmux](https://formulae.brew.sh/formula/tmux)
-- [ripgred](https://github.com/BurntSushi/ripgrep)
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [fd](https://github.com/sharkdp/fd)
+- [1password CLI](https://developer.1password.com/docs/cli/get-started)
 
 ## Setup
 
