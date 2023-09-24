@@ -91,10 +91,10 @@ return {
 		end
 
 		-- configure html server
-		-- lspconfig["html"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
+		lspconfig["html"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
 
 		-- configure typescript server with plugin
 		lspconfig["tsserver"].setup({

@@ -54,8 +54,7 @@ k.set("n", "n", "nzzzv")
 k.set("n", "N", "Nzzzv")
 
 -- [p]aste [o]ver -> allows for a pasted item to be inserted over something else without losing the pasted item
--- TODO: Needs to be replaced, oia etc cannot be used as these start INSERT mode
-k.set("x", "<leader>ow", '"_dP', { desc = "[O]ver[w]rite selection (void)" })
+k.set("x", "<leader>po", '"_dP', { desc = "Paste over current selection (delete to void)" })
 
 -- When pasting over something, we keep the yanked word in our yank register
 vim.keymap.set("x", "<leader>rp", [["_dP]], { desc = "Paste but keep yanked word" })

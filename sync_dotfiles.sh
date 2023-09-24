@@ -10,6 +10,8 @@ FILES_AND_DIRS=(
     "~/.config/alacritty.yml"
     # tmux config
     "~/.config/tmux"
+    # wezterm
+    "~/.config/wezterm"
 )
 
 # List of subdirectories to exclude from synchronization

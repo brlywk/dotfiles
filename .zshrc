@@ -4,6 +4,17 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Some setup for wezterm?
+HOSTNAME=$(hostname)
+
+emit_osc7() {
+    # Emit the OSC 7 sequence with the current working directory
+    print -Pn "\e]7;file://$HOSTNAME%A\e\\"
+}
+
+precmd_functions+=emit_osc7
+
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME

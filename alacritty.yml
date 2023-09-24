@@ -272,8 +272,7 @@ colors:
   indexed_colors:
     - { index: 16, color: "#FAB387" }
     - { index: 17, color: "#F5E0DC" }
-
-shell:
-  program: /opt/homebrew/Cellar/tmux/3.3a_2/bin/tmux
-  args:
-    - new-session
+# shell:
+#   program: /opt/homebrew/Cellar/tmux/3.3a_2/bin/tmux
+#   args:
+#     - new-session

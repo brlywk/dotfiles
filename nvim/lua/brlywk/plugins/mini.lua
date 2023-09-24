@@ -83,6 +83,7 @@ return {
 				-- Leader Subgroups
 				{ mode = "n", keys = "<Leader>b", desc = "+Buffer" },
 				{ mode = "n", keys = "<Leader>c", desc = "+Code" },
+				{ mode = "n", keys = "<Leader>cg", desc = "+ChatGPT" },
 				{ mode = "n", keys = "<Leader>h", desc = "+Harpoon" },
 				{ mode = "n", keys = "<Leader>l", desc = "+Plugin Management" },
 				{ mode = "n", keys = "<Leader>s", desc = "+Session Management" },
