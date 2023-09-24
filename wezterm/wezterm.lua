@@ -262,7 +262,7 @@ config.keys = {
 
 	-- pane selection mode
 	{
-		key = "l",
+		key = "o",
 		mods = "LEADER",
 		action = wezterm.action.PaneSelect,
 	},
