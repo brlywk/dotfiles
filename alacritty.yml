@@ -272,7 +272,13 @@ colors:
   indexed_colors:
     - { index: 16, color: "#FAB387" }
     - { index: 17, color: "#F5E0DC" }
-# shell:
-#   program: /opt/homebrew/Cellar/tmux/3.3a_2/bin/tmux
-#   args:
-#     - new-session
+
+key_bindings:
+  - { key: Back, mods: Command, chars: "\u0015" } # This attempts to send Ctrl+U
+
+# Run tmux on startup and attach to 'default' session
+shell:
+  program: /bin/sh
+  args:
+    - -c
+    - /opt/homebrew/bin/tmux attach -t default || /opt/homebrew/bin/tmux new -s default

@@ -25,6 +25,7 @@ Some necessary steps to make everything work when using macOS 🍎
 - [NerdFont](https://www.nerdfonts.com) (I use JetBrainsMono Nerd Font)
 - [NeoVim](https://github.com/neovim/neovim/wiki/Installing-Neovim#homebrew-on-macos-or-linux)
 - [Alacritty](https://formulae.brew.sh/cask/alacritty)
+- [Wezterm](https://wezfurlong.org/wezterm/)
 - [tmux](https://formulae.brew.sh/formula/tmux)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [fd](https://github.com/sharkdp/fd)

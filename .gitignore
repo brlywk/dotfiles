@@ -2,4 +2,4 @@
 .git
 
 # These are symlinks anyway...
-tmux/plugins
+tmux/plugins/

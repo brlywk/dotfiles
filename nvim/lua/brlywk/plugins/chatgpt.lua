@@ -12,7 +12,6 @@ return {
 				api_key_cmd = "op read op://Personal/OpenAI/api-key --no-newline",
 			})
 
-			-- TODO: Add some key commands here...
 			vim.keymap.set("n", "<leader>cgg", "<cmd>:ChatGPT<CR>", { desc = "ChatGPT" })
 			vim.keymap.set(
 				"n",

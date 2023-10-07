@@ -54,6 +54,14 @@ config.window_frame = {
 	font_size = 14.0,
 	active_titlebar_bg = colors.mirage,
 	inactive_titlebar_bg = colors.mirage,
+	border_left_width = "0.5cell",
+	border_right_width = "0.5cell",
+	border_top_height = "0.25cell",
+	border_bottom_height = "0.25cell",
+	border_left_color = colors.cinders,
+	border_right_color = colors.cinders,
+	border_top_color = colors.cinders,
+	border_bottom_color = colors.cinders,
 }
 
 -- hide little | symbal delimiting inactive tabs

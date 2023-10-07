@@ -54,7 +54,7 @@ k.set("n", "n", "nzzzv")
 k.set("n", "N", "Nzzzv")
 
 -- [p]aste [o]ver -> allows for a pasted item to be inserted over something else without losing the pasted item
-k.set("x", "<leader>po", '"_dP', { desc = "Paste over current selection (delete to void)" })
+k.set("x", "<leader>ro", '"_dP', { desc = "Paste over current selection (delete to void)" })
 
 -- When pasting over something, we keep the yanked word in our yank register
 vim.keymap.set("x", "<leader>rp", [["_dP]], { desc = "Paste but keep yanked word" })
@@ -81,14 +81,14 @@ k.set("n", "<C-j>", "<C-w>j")
 k.set("n", "<C-k>", "<C-w>k")
 
 -- pasting from system clipboard (default commands with prefix <leader>)
-k.set("n", "<leader>p", '"+p', { noremap = true, silent = true, desc = "Paste from clipboard" })
-k.set("v", "<leader>p", '"+p', { noremap = true, silent = true, desc = "Paste from clipboard" })
-k.set("n", "<leader>P", '"+P', { noremap = true, silent = true, desc = "Paste from clipboard" })
-k.set("v", "<leader>P", '"+P', { noremap = true, silent = true, desc = "Paste from clipboard" })
+k.set("n", "<leader>yp", '"+p', { noremap = true, silent = true, desc = "Paste from clipboard" })
+k.set("v", "<leader>yp", '"+p', { noremap = true, silent = true, desc = "Paste from clipboard" })
+k.set("n", "<leader>yP", '"+P', { noremap = true, silent = true, desc = "Paste from clipboard" })
+k.set("v", "<leader>yP", '"+P', { noremap = true, silent = true, desc = "Paste from clipboard" })
 
 -- same for yanking
-k.set("n", "<leader>y", '"+y', { noremap = true, silent = true, desc = "Yank to clipboard" })
-k.set("v", "<leader>y", '"+y', { noremap = true, silent = true, desc = "Yank to clipboard" })
+k.set("n", "<leader>yy", '"+y', { noremap = true, silent = true, desc = "Yank to clipboard" })
+k.set("v", "<leader>yy", '"+y', { noremap = true, silent = true, desc = "Yank to clipboard" })
 
 -- open quickfix list
 k.set("n", "<leader>ql", vim.cmd.copen, { desc = "Open Quickfix List" })
@@ -106,8 +106,6 @@ end, { desc = "Add word (cwd) to Quickfix List" })
 k.set("n", "<leader>qx", function()
 	vim.fn.setqflist({})
 end, { desc = "Clear Quickfix List" })
-
--- TODO: Need more quickfix list commands?
 
 -- allows replacement of the current word under the cursor
 vim.keymap.set(

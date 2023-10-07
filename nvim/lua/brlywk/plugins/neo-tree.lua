@@ -10,17 +10,6 @@ return {
 		},
 		keys = {
 			{
-				"<C-e>",
-				function()
-					require("neo-tree.command").execute({
-						toggle = true,
-						reveal_force_cwd = true,
-						position = "float",
-					})
-				end,
-				desc = "Open File Tree",
-			},
-			{
 				"<leader>fe",
 				function()
 					require("neo-tree.command").execute({

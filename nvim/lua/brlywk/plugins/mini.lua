@@ -6,29 +6,13 @@ return {
 		-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-ai.md
 		require("mini.ai").setup()
 
-		--  Extended Movement with [] brackets  ------------------------------------
-		--  moves backwards ("[") or forwards ("]") to a target
-		--	Uppercase is first / last occurance, lowercase prev / next
-		--		b	buffer
-		--		c	comment block
-		--		x	marker
-		--		d	diagnostic
-		--		f	file on disk
-		--		i	indent change
-		--		j	jump from jumplist inside current buffer
-		--		l	location from loclist
-		--		o	old files
-		--		q	quickfix list entry
-		--		t	treesitter node
-		--		u	undo state
-		--		w	window in current tab
-		--		y	yank selection
-		require("mini.bracketed").setup()
+		-- Deactivated as I want to use treesitter-textobjects for movement
+		-- require("mini.bracketed").setup()
 
 		--  Removing Buffers  ------------------------------------
 		require("mini.bufremove").setup()
 
-		vim.keymap.set("n", "<leader>bd", function()
+		vim.keymap.set("n", "<leader>bx", function()
 			require("mini.bufremove").delete(0, false)
 		end, { desc = "Delete Buffer" })
 
@@ -93,6 +77,7 @@ return {
 				{ mode = "n", keys = "<Leader>r", desc = "+Rename / Replace" },
 				{ mode = "n", keys = "<Leader>w", desc = "+Window (Split)" },
 				{ mode = "n", keys = "<Leader>x", desc = "+Trouble" },
+				{ mode = "n", keys = "<Leader>y", desc = "+System Clipboard" },
 				{ mode = "n", keys = "<Leader>+", desc = "+Macros" },
 			},
 		})
