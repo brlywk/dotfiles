@@ -27,6 +27,7 @@ Some necessary steps to make everything work when using macOS 🍎
 - [Alacritty](https://formulae.brew.sh/cask/alacritty)
 - [Wezterm](https://wezfurlong.org/wezterm/)
 - [tmux](https://formulae.brew.sh/formula/tmux)
+- [fzf](https://formulae.brew.sh/formula/fzf)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [fd](https://github.com/sharkdp/fd)
 - [1password CLI](https://developer.1password.com/docs/cli/get-started)
