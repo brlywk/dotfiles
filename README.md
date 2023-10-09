@@ -21,6 +21,8 @@ Some necessary steps to make everything work when using macOS 🍎
 
 - [Homebrew](https://docs.brew.sh/Installation)
 - [Oh-My-Zsh](https://ohmyz.sh/#install)
+  - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+  - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
 - [Spaceship](https://github.com/pascaldevink/spaceship-zsh-theme)
 - [NerdFont](https://www.nerdfonts.com) (I use JetBrainsMono Nerd Font)
 - [NeoVim](https://github.com/neovim/neovim/wiki/Installing-Neovim#homebrew-on-macos-or-linux)
