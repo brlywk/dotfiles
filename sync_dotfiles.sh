@@ -4,6 +4,8 @@
 FILES_AND_DIRS=(
     # oh-my-zsh settings
     "~/.zshrc"
+    # starship config
+    "~/.config/starship.toml"
     # nvim config
     "~/.config/nvim"
     # alacritty config
