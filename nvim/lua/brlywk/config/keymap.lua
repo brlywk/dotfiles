@@ -30,14 +30,14 @@ k.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 k.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- buffer movement: set some keymaps (I like the way LazyVim does this)
-k.set("n", "H", vim.cmd.bprev)
-k.set("n", "L", vim.cmd.bnext)
+k.set("n", "[b", vim.cmd.bprev)
+k.set("n", "]b", vim.cmd.bnext)
 
 -- close (delete) all buffers except the currently open ones
 k.set("n", "<leader>bQ", "<cmd>%bd|e#|bd#<CR>", { silent = true, desc = "Close all except current" })
 
 -- HANDLED BY MINI.MOVE:
--- In visual mode, alloow J and K to move the selected text up and down
+-- In visual mode, allow J and K to move the selected text up and down
 -- k.set('v', '<M-j>', ":m '>+1<CR>gv=gv")
 -- k.set('v', '<M-k>', ":m '<-2<CR>gv=gv")
 

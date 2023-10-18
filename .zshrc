@@ -116,7 +116,7 @@ eval "$(op completion zsh)"; compdef _op op
 
 # Always open tmux
 if [ -z "$TMUX" ]; then
-    tmux attach -t default  || tmux attach -s default
+    tmux attach -t default  || tmux new-session -s default
 fi
 
 # alias ohmyzsh="mate ~/.oh-my-zsh"

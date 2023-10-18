@@ -34,5 +34,6 @@ return {
 		keymap.set("n", "<leader>fw", "<cmd>Telescope grep_string<cr>", { desc = "Find current word" })
 		keymap.set("n", "<leader>fc", "<cmd>Telescope lsp_workspace_symbols<cr>", { desc = "Find code symbols" })
 		keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find Open Buffers" })
+		keymap.set("n", "<leader>bb", "<cmd>Telescope buffers<cr>", { desc = "Find Open Buffers" })
 	end,
 }

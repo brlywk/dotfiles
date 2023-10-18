@@ -120,8 +120,8 @@ return {
 		require("mini.surround").setup()
 
 		-- Bufferline ----------------------------------
-		require("mini.tabline").setup()
+		-- require("mini.tabline").setup()
 		-- remove background color
-		vim.cmd("highlight MiniTablineFill guibg=none")
+		-- vim.cmd("highlight MiniTablineFill guibg=none")
 	end,
 }
