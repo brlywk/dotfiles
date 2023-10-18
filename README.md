@@ -11,7 +11,7 @@ research, experimenting, cursing, rewriting copied code... but it was also a lot
 
 **Note:**
 This is not a complete and exhaustive setup guide. More a list of reminders for myself that are
-hopefully also a little bit useful for anyone stumbling onto this repostiory!
+hopefully also a little bit useful for anyone stumbling onto this repository!
 
 # macOS Setup
 
@@ -19,15 +19,13 @@ Some necessary steps to make everything work when using macOS 🍎
 
 ## Installations
 
+- [Wezterm](https://wezfurlong.org/wezterm/)
+- [NerdFont](https://www.nerdfonts.com) (JetBrainsMono Nerd Font)
 - [Homebrew](https://docs.brew.sh/Installation)
-- [Oh-My-Zsh](https://ohmyz.sh/#install)
+- [Starship](https://starship.rs)
   - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
   - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-- [Spaceship](https://github.com/pascaldevink/spaceship-zsh-theme)
-- [NerdFont](https://www.nerdfonts.com) (I use JetBrainsMono Nerd Font)
 - [NeoVim](https://github.com/neovim/neovim/wiki/Installing-Neovim#homebrew-on-macos-or-linux)
-- [Alacritty](https://formulae.brew.sh/cask/alacritty)
-- [Wezterm](https://wezfurlong.org/wezterm/)
 - [tmux](https://formulae.brew.sh/formula/tmux)
 - [fzf](https://formulae.brew.sh/formula/fzf)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
