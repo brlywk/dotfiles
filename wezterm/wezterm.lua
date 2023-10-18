@@ -27,8 +27,12 @@ config.show_new_tab_button_in_tab_bar = false
 -- dont' ever beep
 config.audible_bell = "Disabled"
 
--- font settings
-config.font = wezterm.font("JetBrainsMono Nerd Font")
+-- font settings (no ligatures)
+config.font = wezterm.font({
+	family = "JetBrainsMono Nerd Font",
+	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+})
+
 config.font_size = 16.0
 
 -- change window padding

@@ -2,24 +2,13 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-# Some setup for wezterm?
-HOSTNAME=$(hostname)
-
-emit_osc7() {
-    # Emit the OSC 7 sequence with the current working directory
-    print -Pn "\e]7;file://$HOSTNAME%A\e\\"
-}
-
-precmd_functions+=emit_osc7
-
+# export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
+# ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -81,9 +70,9 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+# plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
 
 # User configuration
@@ -114,6 +103,7 @@ alias zshconfig="vim ~/.zshrc"
 # Point vi and vim to NeoVim
 alias vim=nvim
 alias vi=nvim
+alias v=nvim
 
 # Make nvim default editor
 export EDITOR=nvim
@@ -130,3 +120,10 @@ if [ -z "$TMUX" ]; then
 fi
 
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Auto suggestions & syntax highlighting
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# try it this new and fancy starship
+eval "$(starship init zsh)"
