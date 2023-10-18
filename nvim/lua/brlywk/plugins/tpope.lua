@@ -2,6 +2,7 @@ return {
 	-- automatically infer tabwidth and all that crap
 	{ "tpope/vim-sleuth" },
 
+	-- Easy use of Git commands
 	{
 		"tpope/vim-fugitive",
 		config = function()
@@ -12,5 +13,9 @@ return {
 		end,
 	},
 
+	-- GitHub extensions for fugitive
 	{ "tpope/vim-rhubarb" },
+
+	-- Useful terminal commands within git
+	{ "tpope/vim-eunuch" },
 }

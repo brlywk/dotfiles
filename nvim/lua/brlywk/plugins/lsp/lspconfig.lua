@@ -67,7 +67,7 @@ return {
 			keymap.set("n", "<leader>cR", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 
 			opts.desc = "Organize Imports"
-			keymap.set("n", "<leader>co", ":OrganizeImports<CR>", opts)
+			keymap.set("n", "<leader>ci", ":OrganizeImports<CR>", opts)
 		end
 
 		-- used to enable autocompletion (assign to every lsp server config)

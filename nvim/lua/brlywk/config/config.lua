@@ -10,7 +10,7 @@ opt.relativenumber = true
 -- highlight line
 opt.cursorline = true
 
--- set tabstops how cthulhu intended them to be
+-- set tabstops as cthulhu intended them to be
 opt.expandtab = true
 opt.tabstop = 4
 opt.softtabstop = 4
@@ -41,7 +41,7 @@ opt.completeopt = "menuone,noselect"
 -- make sure colors are true :P
 opt.termguicolors = true
 
--- make searching a little bit better, thanks to ThePrimeagean
+-- make searching a little bit better
 opt.hlsearch = false
 opt.incsearch = true
 

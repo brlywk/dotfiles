@@ -4,13 +4,6 @@ vim.g.maplocallebder = " "
 
 local k = vim.keymap
 
--- [f]ile [t]ree-> Show 'file explorer'
--- k.set("n", "<leader>ft", vim.cmd.Ex)
-
--- FOR NOW, I PROBABLY SHOULD TRY TO GET USED TO Shift + ;
--- remap ; to also open command
--- k.set("n", ";", ":")
-
 -- I can't even remember how often I have entered macro mode accidentally...
 k.set("n", "q", "<Nop>", { noremap = true, silent = true })
 k.set("n", "<leader>++", function()
@@ -37,11 +30,14 @@ k.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 k.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- buffer movement: set some keymaps (I like the way LazyVim does this)
-vim.keymap.set("n", "H", vim.cmd.bprev)
-vim.keymap.set("n", "L", vim.cmd.bnext)
+k.set("n", "H", vim.cmd.bprev)
+k.set("n", "L", vim.cmd.bnext)
 
+-- close (delete) all buffers except the currently open ones
+k.set("n", "<leader>bQ", "<cmd>%bd|e#|bd#<CR>", { silent = true, desc = "Close all except current" })
+
+-- HANDLED BY MINI.MOVE:
 -- In visual mode, alloow J and K to move the selected text up and down
--- HANDLED BY MINI.MOVE
 -- k.set('v', '<M-j>', ":m '>+1<CR>gv=gv")
 -- k.set('v', '<M-k>', ":m '<-2<CR>gv=gv")
 
@@ -53,12 +49,6 @@ k.set("n", "<C-u>", "<C-u>zz")
 k.set("n", "n", "nzzzv")
 k.set("n", "N", "Nzzzv")
 
--- [p]aste [o]ver -> allows for a pasted item to be inserted over something else without losing the pasted item
-k.set("x", "<leader>ro", '"_dP', { desc = "Paste over current selection (delete to void)" })
-
--- When pasting over something, we keep the yanked word in our yank register
-vim.keymap.set("x", "<leader>rp", [["_dP]], { desc = "Paste but keep yanked word" })
-
 -- delete single characters to void
 k.set("n", "x", '"_x')
 
@@ -67,6 +57,7 @@ k.set("i", "<C-h>", "<Left>")
 k.set("i", "<C-l>", "<Right>")
 k.set("i", "<C-j>", "<Down>")
 k.set("i", "<C-k>", "<Up>")
+k.set("i", "<C-b>", "<C-o>_")
 
 -- window management
 k.set("n", "<leader>wv", "<C-w>v", { desc = "[W]indow: Split [v]vertically" })

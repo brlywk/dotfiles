@@ -124,4 +124,9 @@ chruby 3.2.2
 # Shell completion for 1password CLI
 eval "$(op completion zsh)"; compdef _op op
 
+# Always open tmux
+if [ -z "$TMUX" ]; then
+    tmux attach -t default  || tmux attach -s default
+fi
+
 # alias ohmyzsh="mate ~/.oh-my-zsh"
