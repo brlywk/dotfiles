@@ -14,6 +14,8 @@ FILES_AND_DIRS=(
     "~/.config/tmux"
     # wezterm
     "~/.config/wezterm"
+    # ssh config
+    "~/.ssh/config"
 )
 
 # List of subdirectories to exclude from synchronization

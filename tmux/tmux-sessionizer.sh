@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Define directories to be searched
-dirs=(~/Programming ~/Programming/Web ~/Programming/Bootcamp)
+dirs=(~/Programming ~/Programming/Web ~/Programming/GameDev)
 
 # Check if a command-line argument is provided
 if [[ $# -eq 1 ]]; then
