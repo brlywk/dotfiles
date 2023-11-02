@@ -4,23 +4,12 @@ vim.g.maplocallebder = " "
 
 local k = vim.keymap
 
--- I can't even remember how often I have entered macro mode accidentally...
-k.set("n", "q", "<Nop>", { noremap = true, silent = true })
-k.set("n", "<leader>++", function()
-	local current_register = vim.fn.reg_executing()
+-- I don't think I ever want top (accidentally) repeat macros multiple times
+k.set("n", "Q", "<Nop>", { noremap = true, silent = true })
+k.set("n", "@@", "<Nop>", { noremap = true, silent = true })
 
-	if current_register == "" then
-		local register = vim.fn.input("Register: ")
-
-		if #register == 1 then
-			vim.cmd("normal! q" .. register)
-		else
-			vim.api.nvim_out_write("Invalid register!\n")
-		end
-	else
-		vim.cmd("normal! q")
-	end
-end, { desc = "Start / stop recording" })
+-- Many people seem to like this, so let's try it
+k.set("i", "jk", "<ESC>", { noremap = true, silent = true })
 
 -- shut vim up when pressing space
 k.set({ "n", "v" }, "<space>", "<Nop>", { silent = true })
@@ -63,7 +52,7 @@ k.set("i", "<C-b>", "<C-o>_")
 k.set("n", "<leader>wv", "<C-w>v", { desc = "[W]indow: Split [v]vertically" })
 k.set("n", "<leader>wh", "<C-w>s", { desc = "[W]indow: Split [h]orizontaly" })
 k.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "[W]indow: Close" })
-k.set("n", "<leader>wc", "<cmd>close<CR>", { desc = "[W]indow: Close" })
+k.set("n", "<leader>wX", "<C-w>o", { desc = "Close All Other Windows" })
 
 -- easier movement between windows
 k.set("n", "<C-h>", "<C-w>h")
@@ -80,23 +69,6 @@ k.set("v", "<leader>yP", '"+P', { noremap = true, silent = true, desc = "Paste f
 -- same for yanking
 k.set("n", "<leader>yy", '"+y', { noremap = true, silent = true, desc = "Yank to clipboard" })
 k.set("v", "<leader>yy", '"+y', { noremap = true, silent = true, desc = "Yank to clipboard" })
-
--- open quickfix list
-k.set("n", "<leader>ql", vim.cmd.copen, { desc = "Open Quickfix List" })
--- add word under cursor to list for current file
-k.set("n", "<leader>qw", function()
-	local word = vim.fn.expand("<cword>")
-	vim.cmd("vimgrep /\\V\\<" .. word .. "\\>/j %")
-end, { desc = "Add word to Quickfix List" })
--- add word under cursor to file for cwd
-k.set("n", "<leader>qd", function()
-	local word = vim.fn.expand("<cword>")
-	vim.cmd("vimgrep /\\V\\<" .. word .. "\\>/j *")
-end, { desc = "Add word (cwd) to Quickfix List" })
--- clear quickflix list
-k.set("n", "<leader>qx", function()
-	vim.fn.setqflist({})
-end, { desc = "Clear Quickfix List" })
 
 -- allows replacement of the current word under the cursor
 vim.keymap.set(

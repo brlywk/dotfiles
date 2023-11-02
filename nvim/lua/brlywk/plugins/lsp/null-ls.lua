@@ -24,9 +24,9 @@ return {
 				--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
 				formatting.prettier.with({
 					extra_filetypes = { "svelte", "astro" },
-				}), -- js/ts formatter
-				formatting.stylua, -- lua formatter
-				diagnostics.eslint_d.with({ -- js/ts linter
+				}),                                                   -- js/ts formatter
+				formatting.stylua,                                    -- lua formatter
+				diagnostics.eslint_d.with({                           -- js/ts linter
 					condition = function(utils)
 						return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" }) -- only enable if root has .eslintrc.js or .eslintrc.cjs
 					end,
@@ -46,6 +46,7 @@ return {
 									return client.name == "null-ls"
 								end,
 								bufnr = bufnr,
+								async = false,
 							})
 						end,
 					})

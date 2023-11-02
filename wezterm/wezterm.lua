@@ -110,6 +110,12 @@ config.keys = {
 		action = wezterm.action.ActivateCommandPalette,
 	},
 
+	-- Insert Umlauts
+	{ key = "u", mods = "LEADER|CTRL", action = wezterm.action.SendString("ü") },
+	{ key = "o", mods = "LEADER|CTRL", action = wezterm.action.SendString("ö") },
+	{ key = "a", mods = "LEADER|CTRL", action = wezterm.action.SendString("ä") },
+	{ key = "s", mods = "LEADER|CTRL", action = wezterm.action.SendString("ß") },
+
 	-- Deactivate CMD-T to not have Tabs interfere with TMUX
 	{
 		key = "t",

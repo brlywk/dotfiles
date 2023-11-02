@@ -1,8 +1,8 @@
 -- basic options
-require('brlywk.config.config')
+require("brlywk.config.config")
 
 -- highlight on yank
-require('brlywk.config.highlight')
+require("brlywk.config.highlight")
 
 -- keymap
-require('brlywk.config.keymap')
+require("brlywk.config.keymap")

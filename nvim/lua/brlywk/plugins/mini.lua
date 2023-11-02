@@ -4,7 +4,7 @@ return {
 	config = function()
 		--  AI - Improved outer / inner selection  ------------------------------------
 		-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-ai.md
-		require("mini.ai").setup()
+		-- require("mini.ai").setup()
 
 		-- Deactivated as I want to use treesitter-textobjects for movement
 		-- require("mini.bracketed").setup()
@@ -68,17 +68,18 @@ return {
 				{ mode = "n", keys = "<Leader>b", desc = "+Buffer" },
 				{ mode = "n", keys = "<Leader>c", desc = "+Code" },
 				{ mode = "n", keys = "<Leader>cg", desc = "+ChatGPT" },
-				{ mode = "n", keys = "<Leader>h", desc = "+Harpoon" },
-				{ mode = "n", keys = "<Leader>l", desc = "+Plugin Management" },
-				{ mode = "n", keys = "<Leader>s", desc = "+Session Management" },
+				-- Moved to buffer commands...
+				-- { mode = "n", keys = "<Leader>h", desc = "+Harpoon" },
+				{ mode = "n", keys = "<Leader>l", desc = "+ Lazy / Mason" },
+				{ mode = "n", keys = "<Leader>s", desc = "+Search (Flash)" },
 				{ mode = "n", keys = "<Leader>f", desc = "+Find / File" },
 				{ mode = "n", keys = "<Leader>g", desc = "+Git" },
 				{ mode = "n", keys = "<Leader>q", desc = "+Quickfix List" },
-				{ mode = "n", keys = "<Leader>r", desc = "+Rename / Replace" },
+				{ mode = "n", keys = "<Leader>r", desc = "+Refactor" },
+				{ mode = "n", keys = "<Leader>v", desc = "+Session Management" },
 				{ mode = "n", keys = "<Leader>w", desc = "+Window (Split)" },
 				{ mode = "n", keys = "<Leader>x", desc = "+Trouble" },
 				{ mode = "n", keys = "<Leader>y", desc = "+System Clipboard" },
-				{ mode = "n", keys = "<Leader>+", desc = "+Macros" },
 			},
 		})
 
@@ -87,16 +88,16 @@ return {
 
 		--  Hightlight Indent Scope  ------------------------------------
 		--  While indent-breakline offers static highlight, this one does dynamic highlighting
-		require("mini.indentscope").setup({
-			draw = {
-				delay = 50,
-				animation = require("mini.indentscope").gen_animation.none(),
-			},
-			symbol = "▏",
-		})
+		-- require("mini.indentscope").setup({
+		-- 	draw = {
+		-- 		delay = 50,
+		-- 		animation = require("mini.indentscope").gen_animation.none(),
+		-- 	},
+		-- 	symbol = "▏",
+		-- })
 
 		--  Better quickfind with f and t  ------------------------------------
-		require("mini.jump").setup()
+		-- require("mini.jump").setup()
 
 		--  Move text chunks around with Alt = hjkl  ------------------------------------
 		require("mini.move").setup()

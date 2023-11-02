@@ -68,6 +68,9 @@ return {
 
 			opts.desc = "Organize Imports"
 			keymap.set("n", "<leader>ci", ":OrganizeImports<CR>", opts)
+
+			opts.desc = "Format Code"
+			keymap.set("n", "<leader>cf", vim.lsp.buf.format, opts)
 		end
 
 		-- used to enable autocompletion (assign to every lsp server config)
@@ -90,13 +93,15 @@ return {
 			vim.lsp.buf.execute_command(params)
 		end
 
-		-- configure html server
+		------ [[ LSP SERVER CONFIGS ]] ------
+
+		-- HTML
 		lspconfig["html"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
 
-		-- configure typescript server with plugin
+		-- TypeScript & Co.
 		lspconfig["tsserver"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
@@ -113,7 +118,7 @@ return {
 			},
 		})
 
-		-- configure css server
+		-- CSS
 		lspconfig["cssls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
@@ -129,63 +134,87 @@ return {
 			},
 		})
 
-		-- configure tailwindcss server
+		-- Tailwind CSS
 		lspconfig["tailwindcss"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
 
-		-- configure svelte server
+		-- Svelte
 		lspconfig["svelte"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
 
-		-- -- configure prisma orm server
+		-- -- Prism
 		-- lspconfig["prismals"].setup({
 		-- 	capabilities = capabilities,
 		-- 	on_attach = on_attach,
 		-- })
 
-		-- configure graphql language server
-		lspconfig["graphql"].setup({
-			capabilities = capabilities,
-			on_attach = on_attach,
-			filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-		})
+		-- GraphQL
+		-- lspconfig["graphql"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- 	filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+		-- })
 
-		-- configure emmet language server
+		-- Emmet
 		lspconfig["emmet_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 		})
 
-		-- configure python server
+		-- Pythong
 		-- lspconfig["pyright"].setup({
 		-- 	capabilities = capabilities,
 		-- 	on_attach = on_attach,
 		-- })
 
-		-- astro
+		-- Astro
 		lspconfig["astro"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
 
-		-- go
+		-- Go
 		lspconfig["gopls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
 
-		-- rust
+		-- Rust
 		lspconfig["rust_analyzer"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
 
-		-- configure lua server (with special settings)
+		-- TOML
+		lspconfig["taplo"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- YAML
+		lspconfig["yamlls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- HTMX
+		lspconfig["htmx"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- Templ (Go Templating Package)
+		lspconfig["templ"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- Lua server (with special settings)
 		lspconfig["lua_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
