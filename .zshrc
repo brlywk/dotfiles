@@ -44,9 +44,11 @@ if [ -z "$TMUX" ]; then
     tmux attach -t default  || tmux new-session -s default
 fi
 
+# Volta
+export PATH="$VOLTA_HOME/bin:$PATH"
+export VOLTA_HOME="$HOME/.volta"
+
 ###########################
 #       ALWAYS LAST
 # Get on board the starship
 eval "$(starship init zsh)"
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
