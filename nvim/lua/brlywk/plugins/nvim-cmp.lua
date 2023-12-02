@@ -6,6 +6,7 @@ return {
 		"hrsh7th/cmp-buffer", -- source for text in buffer
 		"hrsh7th/cmp-path", -- source for file system paths
 		"hrsh7th/cmp-cmdline",
+		"hrsh7th/cmp-nvim-lsp-signature-help",
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
 	},
 	opts = function()
@@ -42,8 +43,10 @@ return {
 		vim.cmd("hi CmpSel guifg=#1F1E2E guibg=#CBA6F7")
 
 		return {
+			-- never ever ever ever ever preselect a completion suggestion... ever!
+			preselect = cmp.PreselectMode.None,
 			completion = {
-				completeopt = "menuone,noselect",
+				completeopt = "menuone,noselect,noinsert,preview",
 			},
 			window = {
 				completion = {
@@ -67,7 +70,7 @@ return {
 				["<C-d>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
 				["<C-e>"] = cmp.mapping.abort(), -- close completion window
-				["<CR>"] = cmp.mapping.confirm({ select = false }),
+				["<CR>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace }),
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_next_item()
@@ -94,6 +97,9 @@ return {
 				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
+
+				-- signature help
+				{ name = "nvim_lsp_signature_help" },
 
 				-- Copilot Source
 				{ name = "copilot" },

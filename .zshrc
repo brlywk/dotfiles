@@ -39,14 +39,12 @@ eval "$(op completion zsh)"; compdef _op op
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# Always run tmux and attach / create 'default' session
-if [ -z "$TMUX" ]; then
-    tmux attach -t default  || tmux new-session -s default
-fi
-
 # Volta
 export PATH="$VOLTA_HOME/bin:$PATH"
 export VOLTA_HOME="$HOME/.volta"
+
+# VS Code
+alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 
 ###########################
 #       ALWAYS LAST

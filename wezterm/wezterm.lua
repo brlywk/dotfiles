@@ -167,5 +167,8 @@ wezterm.on("update-status", function(window, pane)
 	window:set_right_status(wezterm.format(statusElements))
 end)
 
+-- try running tmux on startup
+config.default_prog = { "/Users/christoph/.config/run-tmux" }
+
 -- return config
 return config

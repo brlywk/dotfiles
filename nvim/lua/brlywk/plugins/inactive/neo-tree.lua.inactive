@@ -10,32 +10,32 @@ return {
 		},
 		keys = {
 			{
-				"<leader>fe",
+				"<leader>fE",
 				function()
 					require("neo-tree.command").execute({
 						toggle = true,
 						reveal_force_cwd = true,
-						position = "float",
+						position = "right",
 					})
 				end,
-				desc = "Open File Tree",
+				desc = "File Explorer (Neo-Tree)",
 			},
 		},
 		opts = {
-			disable_netrw = true,
-			hijack_netrw = true,
-			popup_border_style = "single",
+			-- disable_netrw = true,
+			-- hijack_netrw = true,
+			-- popup_border_style = "single",
 			enable_git_status = true,
 			enable_diagnostics = true,
 			window = {
-				position = "float",
+				position = "right",
 				mappings = {
 					["<space>"] = "none",
 				},
 			},
-			filesystem = {
-				hijack_netrw_behavior = "open_default",
-			},
+			-- filesystem = {
+			-- 	hijack_netrw_behavior = "open_default",
+			-- },
 		},
 	},
 }

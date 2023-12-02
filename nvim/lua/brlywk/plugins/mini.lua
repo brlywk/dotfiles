@@ -67,19 +67,21 @@ return {
 				-- Leader Subgroups
 				{ mode = "n", keys = "<Leader>b", desc = "+Buffer" },
 				{ mode = "n", keys = "<Leader>c", desc = "+Code" },
-				{ mode = "n", keys = "<Leader>cg", desc = "+ChatGPT" },
+				-- { mode = "n", keys = "<Leader>cg", desc = "+ChatGPT" },
 				-- Moved to buffer commands...
 				-- { mode = "n", keys = "<Leader>h", desc = "+Harpoon" },
 				{ mode = "n", keys = "<Leader>l", desc = "+ Lazy / Mason" },
 				{ mode = "n", keys = "<Leader>s", desc = "+Search (Flash)" },
 				{ mode = "n", keys = "<Leader>f", desc = "+Find / File" },
 				{ mode = "n", keys = "<Leader>g", desc = "+Git" },
-				{ mode = "n", keys = "<Leader>q", desc = "+Quickfix List" },
+				-- { mode = "n", keys = "<Leader>q", desc = "+Quickfix List" },
 				{ mode = "n", keys = "<Leader>r", desc = "+Refactor" },
 				{ mode = "n", keys = "<Leader>v", desc = "+Session Management" },
 				{ mode = "n", keys = "<Leader>w", desc = "+Window (Split)" },
 				{ mode = "n", keys = "<Leader>x", desc = "+Trouble" },
 				{ mode = "n", keys = "<Leader>y", desc = "+System Clipboard" },
+				-- still have not yet found out where this one actually comes from...
+				{ mode = "n", keys = "<Leader>z", desc = "Why not Zoidberg? (/)_(;,,;)_(/)" },
 			},
 		})
 

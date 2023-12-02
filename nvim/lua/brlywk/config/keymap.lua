@@ -8,9 +8,6 @@ local k = vim.keymap
 k.set("n", "Q", "<Nop>", { noremap = true, silent = true })
 k.set("n", "@@", "<Nop>", { noremap = true, silent = true })
 
--- Many people seem to like this, so let's try it
-k.set("i", "jk", "<ESC>", { noremap = true, silent = true })
-
 -- shut vim up when pressing space
 k.set({ "n", "v" }, "<space>", "<Nop>", { silent = true })
 
@@ -19,8 +16,9 @@ k.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 k.set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- buffer movement: set some keymaps (I like the way LazyVim does this)
-k.set("n", "[b", vim.cmd.bprev)
-k.set("n", "]b", vim.cmd.bnext)
+k.set("n", "[b", vim.cmd.bprev, { noremap = true, silent = true })
+k.set("n", "]b", vim.cmd.bnext, { noremap = true, silent = true })
+k.set("n", "<leader>'", "<C-^>", { noremap = true, silent = true, desc = "Jump to alternate buffer" })
 
 -- close (delete) all buffers except the currently open ones
 k.set("n", "<leader>bQ", "<cmd>%bd|e#|bd#<CR>", { silent = true, desc = "Close all except current" })

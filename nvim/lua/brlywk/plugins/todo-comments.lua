@@ -23,5 +23,9 @@ return {
 		{ "<leader>ft", "<cmd>TodoTelescope<cr>", desc = "Todo" },
 		{ "<leader>fT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
 	},
-	opts = {},
+	opts = {
+		keywords = {
+			DEBUG = { icon = "󱂦 ", color = "info" },
+		},
+	},
 }
