@@ -113,7 +113,7 @@ return {
 		require("mini.operators").setup()
 
 		--  Autopairs  ------------------------------------
-		require("mini.pairs").setup()
+		-- require("mini.pairs").setup()
 
 		-- Splits / Joings (expands) argument lists ----------------------------------
 		-- Keymap: gS

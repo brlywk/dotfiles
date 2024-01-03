@@ -1,5 +1,6 @@
 return {
 	"stevearc/aerial.nvim",
+	cond = not vim.g.vscode,
 	opts = {},
 	config = function()
 		require("aerial").setup({

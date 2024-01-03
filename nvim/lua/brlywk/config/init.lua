@@ -6,3 +6,6 @@ require("brlywk.config.highlight")
 
 -- keymap
 require("brlywk.config.keymap")
+
+-- global helper functions
+require("brlywk.config.globals")

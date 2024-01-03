@@ -146,6 +146,12 @@ return {
 			on_attach = on_attach,
 		})
 
+		-- Vue
+		lspconfig["volar"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
 		-- -- Prism
 		-- lspconfig["prismals"].setup({
 		-- 	capabilities = capabilities,
@@ -166,7 +172,7 @@ return {
 			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 		})
 
-		-- Pythong
+		-- Python
 		-- lspconfig["pyright"].setup({
 		-- 	capabilities = capabilities,
 		-- 	on_attach = on_attach,
@@ -188,6 +194,13 @@ return {
 		lspconfig["rust_analyzer"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			settings = {
+				["rust-analyzerq"] = {
+					checkOnSave = {
+						command = "clippy",
+					},
+				},
+			},
 		})
 
 		-- TOML

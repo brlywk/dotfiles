@@ -28,10 +28,10 @@ return {
 					"yaml",
 					"html",
 					"css",
-					"prisma",
 					"markdown",
 					"markdown_inline",
 					"svelte",
+					"vue",
 					"graphql",
 					"bash",
 					"lua",
@@ -40,6 +40,7 @@ return {
 					"gitignore",
 					"go",
 					"rust",
+					"prisma",
 				},
 				incremental_selection = {
 					enable = true,
@@ -52,7 +53,7 @@ return {
 				},
 				-- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
 				context_commentstring = {
-					enable = true,
+					-- enable = true,
 					enable_autocmd = false,
 				},
 				-- auto install above language parsers

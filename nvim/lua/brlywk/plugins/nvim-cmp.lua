@@ -94,12 +94,14 @@ return {
 			sources = cmp.config.sources({
 				-- default sources
 				{ name = "nvim_lsp" },
-				{ name = "luasnip" },
 				{ name = "buffer" },
 				{ name = "path" },
 
 				-- signature help
 				{ name = "nvim_lsp_signature_help" },
+
+				-- Snippets
+				{ name = "luasnip" },
 
 				-- Copilot Source
 				{ name = "copilot" },
