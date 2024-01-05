@@ -22,7 +22,7 @@ return {
 				end
 			end, { desc = "Toggle Copilot on/off" })
 
-			-- Deactivate by defaul... better for learning
+			-- Deactivate by default... better for learning
 			vim.cmd("Copilot disable")
 		end,
 	},
@@ -52,5 +52,10 @@ return {
 				},
 			})
 		end,
+	},
+
+	-- enable lualine integration
+	{
+		'AndreM222/copilot-lualine'
 	},
 }

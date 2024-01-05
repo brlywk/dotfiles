@@ -20,10 +20,10 @@ return {
 		-- import cmp-nvim-lsp plugin
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
-		local keymap = vim.keymap -- for conciseness
-
+		local keymap = vim.keymap
 		local opts = { noremap = true, silent = true }
-		local on_attach = function(client, bufnr)
+
+		local on_attach = function(_, bufnr)
 			opts.buffer = bufnr
 
 			-- set keybinds
@@ -93,7 +93,7 @@ return {
 			vim.lsp.buf.execute_command(params)
 		end
 
-		------ [[ LSP SERVER CONFIGS ]] ------
+		-------- LSP SERVER CONFIG -----------------------
 
 		-- HTML
 		lspconfig["html"].setup({
@@ -152,18 +152,6 @@ return {
 			on_attach = on_attach,
 		})
 
-		-- -- Prism
-		-- lspconfig["prismals"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
-
-		-- GraphQL
-		-- lspconfig["graphql"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- 	filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-		-- })
 
 		-- Emmet
 		lspconfig["emmet_ls"].setup({
@@ -171,12 +159,6 @@ return {
 			on_attach = on_attach,
 			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 		})
-
-		-- Python
-		-- lspconfig["pyright"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
 
 		-- Astro
 		lspconfig["astro"].setup({
@@ -247,5 +229,26 @@ return {
 				},
 			},
 		})
+
+		-- currently unused
+
+		-- Python
+		-- lspconfig["pyright"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
+
+		-- -- Prism
+		-- lspconfig["prismals"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- })
+
+		-- GraphQL
+		-- lspconfig["graphql"].setup({
+		-- 	capabilities = capabilities,
+		-- 	on_attach = on_attach,
+		-- 	filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+		-- })
 	end,
 }

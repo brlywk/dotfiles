@@ -26,16 +26,18 @@ return {
 		telescope.load_extension("fzf")
 
 		-- set keymaps
-		local keymap = vim.keymap -- for conciseness
+		local keymap = vim.keymap
 
 		keymap.set("n", "<leader>bb", "<cmd>Telescope buffers<cr>", { desc = "Find Open Buffers" })
 		keymap.set("n", "<leader>bf", "<cmd>Telescope buffers<cr>", { desc = "Find Open Buffers" })
 		keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find Open Buffers" })
+
 		keymap.set("n", "<leader>fc", "<cmd>Telescope lsp_workspace_symbols<cr>", { desc = "Find code symbols" })
 		keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
-		keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<cr>", { desc = "Find files" })
+		keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<cr>", { desc = "Find files (Git)" })
 		keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Find recent" })
-		keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find search via grep" })
+		keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Search (grep)" })
 		keymap.set("n", "<leader>fw", "<cmd>Telescope grep_string<cr>", { desc = "Find current word" })
+		keymap.set("n", "<leader>fH", "<cmd>Telescope help_tags<cr>", { desc = "Search help" })
 	end,
 }

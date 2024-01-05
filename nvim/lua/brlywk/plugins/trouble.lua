@@ -10,6 +10,13 @@ return {
 			desc = "Open Trouble",
 		},
 		{
+			"<leader>xn",
+			function()
+				require("trouble").next()
+			end,
+			desc = "Trouble: Next",
+		},
+		{
 			"<leader>xw",
 			function()
 				require("trouble").open("workspace_diagnostics")

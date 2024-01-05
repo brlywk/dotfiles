@@ -2,13 +2,6 @@ return {
 	"echasnovski/mini.nvim",
 	version = false,
 	config = function()
-		--  AI - Improved outer / inner selection  ------------------------------------
-		-- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-ai.md
-		-- require("mini.ai").setup()
-
-		-- Deactivated as I want to use treesitter-textobjects for movement
-		-- require("mini.bracketed").setup()
-
 		--  Removing Buffers  ------------------------------------
 		require("mini.bufremove").setup()
 
@@ -70,7 +63,7 @@ return {
 				-- { mode = "n", keys = "<Leader>cg", desc = "+ChatGPT" },
 				-- Moved to buffer commands...
 				-- { mode = "n", keys = "<Leader>h", desc = "+Harpoon" },
-				{ mode = "n", keys = "<Leader>l", desc = "+ Lazy / Mason" },
+				{ mode = "n", keys = "<Leader>l", desc = "+Lazy / Mason" },
 				{ mode = "n", keys = "<Leader>s", desc = "+Search (Flash)" },
 				{ mode = "n", keys = "<Leader>f", desc = "+Find / File" },
 				{ mode = "n", keys = "<Leader>g", desc = "+Git" },
@@ -88,19 +81,6 @@ return {
 		--  Hightlight Word under cursor  ------------------------------------
 		require("mini.cursorword").setup()
 
-		--  Hightlight Indent Scope  ------------------------------------
-		--  While indent-breakline offers static highlight, this one does dynamic highlighting
-		-- require("mini.indentscope").setup({
-		-- 	draw = {
-		-- 		delay = 50,
-		-- 		animation = require("mini.indentscope").gen_animation.none(),
-		-- 	},
-		-- 	symbol = "▏",
-		-- })
-
-		--  Better quickfind with f and t  ------------------------------------
-		-- require("mini.jump").setup()
-
 		--  Move text chunks around with Alt = hjkl  ------------------------------------
 		require("mini.move").setup()
 
@@ -112,19 +92,11 @@ return {
 		--		gs	Sort text (selection)
 		require("mini.operators").setup()
 
-		--  Autopairs  ------------------------------------
-		-- require("mini.pairs").setup()
-
 		-- Splits / Joings (expands) argument lists ----------------------------------
 		-- Keymap: gS
 		require("mini.splitjoin").setup()
 
 		-- Super amazing surround mappings ----------------------------------
 		require("mini.surround").setup()
-
-		-- Bufferline ----------------------------------
-		-- require("mini.tabline").setup()
-		-- remove background color
-		-- vim.cmd("highlight MiniTablineFill guibg=none")
 	end,
 }
