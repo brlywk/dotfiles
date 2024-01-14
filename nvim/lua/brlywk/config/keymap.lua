@@ -40,11 +40,11 @@ k.set("n", "N", "Nzzzv")
 k.set("n", "x", '"_x')
 
 -- some convenient INSERT mode commands
-k.set("i", "<C-h>", "<Left>")
-k.set("i", "<C-l>", "<Right>")
-k.set("i", "<C-j>", "<Down>")
-k.set("i", "<C-k>", "<Up>")
-k.set("i", "<C-b>", "<C-o>_")
+-- k.set("i", "<C-h>", "<Left>")
+-- k.set("i", "<C-l>", "<Right>")
+-- k.set("i", "<C-j>", "<Down>")
+-- k.set("i", "<C-k>", "<Up>")
+-- k.set("i", "<C-b>", "<C-o>_")
 
 -- window management
 k.set("n", "<leader>wv", "<C-w>v", { desc = "[W]indow: Split [v]vertically" })

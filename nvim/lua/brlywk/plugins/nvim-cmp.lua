@@ -6,7 +6,8 @@ return {
 		"hrsh7th/cmp-buffer", -- source for text in buffer
 		"hrsh7th/cmp-path", -- source for file system paths
 		"hrsh7th/cmp-cmdline",
-		"hrsh7th/cmp-nvim-lsp-signature-help",
+		"hrsh7th/cmp-nvim-lsp-signature-help", -- show function signature while parameter list
+		"hrsh7th/cmp-nvim-lsp-document-symbol", -- use /@ to quick find document symbols
 		"saadparwaiz1/cmp_luasnip", -- for autocompletion
 	},
 	opts = function()
@@ -20,6 +21,7 @@ return {
 		cmp.setup.cmdline("/", {
 			mapping = cmp.mapping.preset.cmdline(),
 			sources = {
+				{ name = "nvim_lsp_document_symbol" },
 				{ name = "buffer" },
 			},
 		})
@@ -74,8 +76,6 @@ return {
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_next_item()
-					elseif luasnip.expand_or_locally_jumpable() then
-						luasnip.expand_or_jump()
 					else
 						fallback()
 					end
@@ -83,12 +83,13 @@ return {
 				["<S-Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_prev_item()
-					elseif luasnip.locally_jumpable(-1) then
-						luasnip.jump(-1)
 					else
 						fallback()
 					end
 				end, { "i", "s" }),
+
+				["<C-n>"] = cmp.config.disable,
+				["<C-p>"] = cmp.config.disable,
 			}),
 			-- sources for autocompletion
 			sources = cmp.config.sources({

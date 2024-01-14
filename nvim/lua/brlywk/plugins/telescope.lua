@@ -38,6 +38,6 @@ return {
 		keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Find recent" })
 		keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Search (grep)" })
 		keymap.set("n", "<leader>fw", "<cmd>Telescope grep_string<cr>", { desc = "Find current word" })
-		keymap.set("n", "<leader>fH", "<cmd>Telescope help_tags<cr>", { desc = "Search help" })
+		keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Search help" })
 	end,
 }

@@ -60,7 +60,7 @@ return {
 			opts.desc = "Go to next diagnostic"
 			keymap.set("n", "]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
 
-			opts.desc = "Show documentation for what is under cursor"
+			opts.desc = "Show documentation (cursor)"
 			keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
 			opts.desc = "Restart LSP"
@@ -71,6 +71,9 @@ return {
 
 			opts.desc = "Format Code"
 			keymap.set("n", "<leader>cf", vim.lsp.buf.format, opts)
+
+			opts.desc = "Signature Help"
+			keymap.set("i", "<C-s>", vim.lsp.buf.signature_help, opts)
 		end
 
 		-- used to enable autocompletion (assign to every lsp server config)
@@ -152,7 +155,6 @@ return {
 			on_attach = on_attach,
 		})
 
-
 		-- Emmet
 		lspconfig["emmet_ls"].setup({
 			capabilities = capabilities,
@@ -230,14 +232,13 @@ return {
 			},
 		})
 
-		-- currently unused
-
 		-- Python
-		-- lspconfig["pyright"].setup({
-		-- 	capabilities = capabilities,
-		-- 	on_attach = on_attach,
-		-- })
+		lspconfig["pylsp"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
 
+		-- currently unused
 		-- -- Prism
 		-- lspconfig["prismals"].setup({
 		-- 	capabilities = capabilities,

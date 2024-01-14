@@ -13,18 +13,20 @@ return {
 				typescript = { "prettierd", "prettier" },
 				javascriptreact = { "prettierd", "prettier" },
 				typescriptreact = { "prettierd", "prettier" },
+
 				astro = { "prettierd", "prettier" },
 				svelte = { "prettierd", "prettier" },
 				vue = { "prettierd", "prettier" },
-				json = { "prettierd", "prettier" },
 
+				json = { "prettierd", "prettier" },
 				markdown = { "prettierd", "prettier" },
 				yaml = { "yamlfix" },
 				toml = { "taplo" },
-				lua = { "styleua" },
+				lua = { "stylua" },
 
 				go = { "gofumpt" },
 				rust = { "rustfmt" },
+				python = { "blue" },
 			},
 			format_on_save = {
 				timeout_ms = 500,
@@ -34,6 +36,7 @@ return {
 
 		-- keymap to trigger formatting manually
 		vim.keymap.set({ "n", "v" }, "<leader>cf", function()
+			--- @diagnostic disable-next-line:undefined-global
 			conform.format({
 				lsp_fallback = true,
 				async = false,
