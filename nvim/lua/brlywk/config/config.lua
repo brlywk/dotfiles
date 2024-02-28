@@ -60,3 +60,6 @@ vim.opt.winbar = "%=%m %f"
 -- split windows to the right and bottom
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+
+-- hide 'no write since last change' error
+opt.hidden = true

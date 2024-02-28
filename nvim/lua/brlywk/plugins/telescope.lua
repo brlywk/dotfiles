@@ -5,6 +5,7 @@ return {
 		"nvim-lua/plenary.nvim",
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 		"nvim-tree/nvim-web-devicons",
+		"nvim-telescope/telescope-ui-select.nvim",
 	},
 	config = function()
 		local telescope = require("telescope")
@@ -20,10 +21,19 @@ return {
 						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 					},
 				},
+				file_ignore_patterns = { "node_modules" },
+			},
+			extensions = {
+				["ui-select"] = {
+					require("telescope.themes").get_dropdown(),
+				},
 			},
 		})
 
+		-- activate native fuzzy search with fzf
 		telescope.load_extension("fzf")
+		-- replace native nvim select dialogue with telescope
+		telescope.load_extension("ui-select")
 
 		-- set keymaps
 		local keymap = vim.keymap

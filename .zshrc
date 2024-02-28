@@ -2,7 +2,10 @@
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit 
 
-# Some aliases
+# Prevent shell from exiting on C-d
+setopt ignore_eof
+
+########## Aliases ##########
 alias zshconfig="nvim ~/.zshrc"
 alias vim=nvim
 alias vi=nvim
@@ -22,6 +25,7 @@ else
     echo "Air for Go is not installed (or not in ~/.go/bin/)"
 fi
 
+########## More settings ##########
 # Make NeoVim the default editor
 export EDITOR=nvim
 
@@ -50,3 +54,6 @@ alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/co
 #       ALWAYS LAST
 # Get on board the starship
 eval "$(starship init zsh)"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"

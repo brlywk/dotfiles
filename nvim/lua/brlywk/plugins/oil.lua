@@ -8,11 +8,15 @@ return {
 			skip_confirm_for_simple_edits = true,
 			delete_to_trash = "true",
 
-			keymap = {
-				["'"] = "actions.parent",
-			},
 			view_options = {
 				show_hidden = false,
+				-- I rarely if ever want to see the node_modules folder...
+				is_hidden_file = function(name, _)
+					local startsWithDot = vim.startswith(name, ".")
+					local nodeModules = vim.startswith(name, "node_modules")
+
+					return startsWithDot or nodeModules
+				end,
 			},
 		})
 

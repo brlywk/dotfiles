@@ -11,7 +11,8 @@ return {
 			local treesitter = require("nvim-treesitter.configs")
 
 			-- configure treesitter
-			treesitter.setup({ -- enable syntax highlighting
+			treesitter.setup({
+				-- enable syntax highlighting
 				highlight = {
 					enable = true,
 				},
@@ -32,17 +33,17 @@ return {
 					"astro",
 					"markdown",
 					"markdown_inline",
-					"svelte",
+					-- "svelte",
 					"vue",
-					"graphql",
+					-- "graphql",
 					"bash",
 					"lua",
-					"vim",
+					-- "vim",
 					"dockerfile",
 					"gitignore",
 					"go",
-					"rust",
-					"python",
+					-- "rust",
+					-- "python",
 				},
 				incremental_selection = {
 					enable = true,

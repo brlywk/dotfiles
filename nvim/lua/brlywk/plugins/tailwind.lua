@@ -55,6 +55,18 @@ return {
 		config = true,
 		opts = {
 			on_save_enabled = true,
+			on_save_pattern = {
+				"*.astro",
+				"*.hbs",
+				"*.heex",
+				"*.html",
+				"*.js",
+				"*.jsx",
+				"*.php",
+				"*.tsx",
+				"*.twig",
+				"*.vue",
+			},
 		},
 	},
 }

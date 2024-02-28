@@ -90,12 +90,14 @@ return {
 		return dashboard
 	end,
 	config = function(_, dashboard)
+		local lv = require("lazy")
+
 		if vim.o.filetype == "lazy" then
 			vim.cmd.close()
 			vim.api.nvim_create_autocmd("User", {
 				pattern = "AlphaReady",
 				callback = function()
-					require("lazy").show()
+					lv.show()
 				end,
 			})
 		end
@@ -105,7 +107,7 @@ return {
 		vim.api.nvim_create_autocmd("User", {
 			pattern = "LazyVimStarted",
 			callback = function()
-				local stats = require("lazy").stats()
+				local stats = lv.stats()
 				local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
 				dashboard.section.footer.val = "󱐋 " .. stats.count .. " plugins loaded in " .. ms .. "ms"
 				pcall(vim.cmd.AlphaRedraw)

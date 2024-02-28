@@ -16,7 +16,9 @@ return {
 
 				astro = { "prettierd", "prettier" },
 				svelte = { "prettierd", "prettier" },
-				vue = { "prettierd", "prettier" },
+				-- we have to disable prettier for vue as it's clashing with how
+				-- vue templates should be formatted
+				vue = { "eslint_d", "eslint" },
 
 				json = { "prettierd", "prettier" },
 				markdown = { "prettierd", "prettier" },
