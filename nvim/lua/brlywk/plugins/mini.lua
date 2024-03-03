@@ -67,6 +67,7 @@ return {
 				{ mode = "n", keys = "<Leader>s", desc = "+Search (Flash)" },
 				{ mode = "n", keys = "<Leader>f", desc = "+Find / File" },
 				{ mode = "n", keys = "<Leader>g", desc = "+Git" },
+				{ mode = "n", keys = "<Leader>o", desc = "+Obsidian" },
 				-- { mode = "n", keys = "<Leader>q", desc = "+Quickfix List" },
 				{ mode = "n", keys = "<Leader>r", desc = "+Refactor" },
 				{ mode = "n", keys = "<Leader>v", desc = "+Session Management" },
@@ -78,7 +79,7 @@ return {
 			},
 		})
 
-		--  Hightlight Word under cursor  ------------------------------------
+		--  Highlight Word under cursor  ------------------------------------
 		require("mini.cursorword").setup()
 
 		--  Move text chunks around with Alt = hjkl  ------------------------------------

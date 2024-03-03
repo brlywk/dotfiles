@@ -1,5 +1,21 @@
 --- @diagnostic disable:undefined-global
 return {
+	-- if error
+	s(
+		"ife",
+		fmta(
+			[[
+			if err != nil {
+				return err
+			}
+			<done>
+		]],
+			{
+				done = i(0),
+			}
+		)
+	),
+
 	-- error if
 	s(
 		"eif",

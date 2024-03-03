@@ -55,11 +55,15 @@ opt.colorcolumn = "100"
 opt.fillchars = { eob = " " }
 
 -- Add filename to top of open buffer
-vim.opt.winbar = "%=%m %f"
+opt.winbar = "%=%m %f"
 
 -- split windows to the right and bottom
-vim.opt.splitright = true
-vim.opt.splitbelow = true
+opt.splitright = true
+opt.splitbelow = true
 
 -- hide 'no write since last change' error
 opt.hidden = true
+
+-- required for Obsidian.nvim to function properly... try this out, otherwise
+-- deactivate Obsidian UI features
+opt.conceallevel = 2

@@ -2,26 +2,33 @@ return {
 	"stevearc/conform.nvim",
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
+		-- define some of the sublist to make sure the faster formatter is tried first
+		local prettier = { "prettierd", "prettier" }
+		local eslint = { "eslint_d", "eslint" }
+
 		require("conform").setup({
 			-- configure which formatter to use
+			-- Note: sublists are used to specify the first formatter found to be used,
+			-- otherwise in a list all formatters are run in sequence
+
 			formatters_by_ft = {
-				html = { "prettierd", "prettier" },
-				css = { "prettierd", "prettier" },
-				scss = { "prettierd", "prettier" },
+				html = { prettier },
+				css = { prettier },
+				scss = { prettier },
 
-				javascript = { "prettierd", "prettier" },
-				typescript = { "prettierd", "prettier" },
-				javascriptreact = { "prettierd", "prettier" },
-				typescriptreact = { "prettierd", "prettier" },
+				javascript = { prettier },
+				typescript = { prettier },
+				javascriptreact = { prettier },
+				typescriptreact = { prettier },
 
-				astro = { "prettierd", "prettier" },
-				svelte = { "prettierd", "prettier" },
+				astro = { prettier },
+				svelte = { prettier },
 				-- we have to disable prettier for vue as it's clashing with how
 				-- vue templates should be formatted
-				vue = { "eslint_d", "eslint" },
+				vue = { eslint },
 
-				json = { "prettierd", "prettier" },
-				markdown = { "prettierd", "prettier" },
+				json = prettier,
+				markdown = prettier,
 				yaml = { "yamlfix" },
 				toml = { "taplo" },
 				lua = { "stylua" },
