@@ -1,0 +1,58 @@
+[
+  // Global settings
+  {
+    "bindings": {
+      "ctrl-y": "menu::Confirm"
+    }
+  },
+  // General Editor settings
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-y": "editor::ConfirmCompletion",
+      "ctrl-e": "project_panel::ToggleFocus"
+    }
+  },
+  // General left / project panel settings
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "a": "project_panel::NewFile",
+      "ctrl-e": "project_panel::ToggleFocus"
+    }
+  },
+  // VIM    Normal Mode, Visual Mode
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "bindings": {
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp"
+    }
+  },
+  // VIM    Normal Mode
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      // Global actions [g]
+      "g r": "editor::FindAllReferences",
+      // Code actions [space c]
+      "space c a": "editor::ToggleCodeActions",
+      "space c f": "editor::Format",
+      // File and search actions [space f]
+      "space f e": "workspace::ToggleLeftDock",
+      "space f f": "file_finder::Toggle"
+    }
+  },
+  // VIM    Visual Mode, Visual Line Mode, Visual Block Mode
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {}
+  },
+  // VIM    Insert Mode
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      // "j k": "vim::NormalBefore"
+    }
+  }
+]
