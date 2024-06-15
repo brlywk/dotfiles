@@ -1,4 +1,14 @@
+# General files to ignore
 readme.md
 .gitignore
 
+
+# Program specific files or folders
+
 tmux/plugins
+
+zed/themes
+zed/conversations
+zed/embeddings
+zed/private_*
+zed/.tmp*
