@@ -1,6 +1,5 @@
 # NeoVim 
 alias vim=nvim
-alias vi=nvim
 alias v=nvim
 
 # Alias to lazygit if it's installed
@@ -21,3 +20,6 @@ alias ls=eza
 
 # run tmux
 alias rt="tmux_default_session"
+
+# Chezmoi
+alias cz=chezmoi

@@ -1,0 +1,9 @@
+{{- if hasKey .git "default_branch" -}}
+[init]
+    defaultBranch = {{ .git.default_branch | quote }}
+{{- end }}
+[user]
+    name = {{ .git.name | quote }}
+    email = {{ .git.email | quote }}
+[alias]
+    pure = pull --rebase
