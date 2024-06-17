@@ -7,5 +7,17 @@ startup_command = ""
 [[session]]
 name = "󰅩 Dev"
 path = "~/Programming/"
-startup_command = "ls -p"
+startup_command = "ls"
+{{- end }}
+
+{{ if eq .usage "work" -}}
+[[session]]
+name = "󰅩 Dev"
+path = "~/Dev/"
+startup_command = "ls"
+
+[[session]]
+name = "󰅩 Dev (Privat)"
+path = "~/Dev-Privat/"
+startup_command = "ls"
 {{- end }}

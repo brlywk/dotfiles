@@ -6,4 +6,8 @@
     name = {{ .git.name | quote }}
     email = {{ .git.email | quote }}
 [alias]
+    out = !git add . && git commit --amend -a --no-edit && git push --force-with-lease
     pure = pull --rebase
+{{ if eq .usage "work" }}
+{{ (bitwarden "item" "Git Config - 01").notes }}
+{{- end }}

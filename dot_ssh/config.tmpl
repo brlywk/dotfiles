@@ -3,5 +3,10 @@ Host *
 	IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 {{- end }}
 Host gh
-	HostName github.com
+	Hostname github.com
+	AddKeysToAgent yes
 	User git
+{{ if eq .usage "work" }}
+{{ (bitwarden "item" "SSH Host Config - 01").notes }}
+{{ (bitwarden "item" "SSH Host Config - GitLab").notes }}
+{{- end }}
