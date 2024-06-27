@@ -1,0 +1,197 @@
+"""" General settings
+"""" ------------------------------------------------------
+
+"" Some important settings
+let mapleader = " "
+
+"" Some useful settings
+set scrolloff=8
+set relativenumber
+set showmode
+set showcmd
+set visualbell
+" use system clipboard
+set clipboard+=unnammed
+
+"" Some convenient settings
+set matchpairs " match character pairs with %
+
+"" Some search settings
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+
+
+"""" Plugin settings
+"""" ------------------------------------------------------
+
+"" Some useful plugins
+set surround
+set commentary
+set highlightedyank
+set sneak " install IdeaVim-Sneak
+set nerdtree
+set easymotion " install IdeaVim-EasyMotion and AceJump
+set notimeout
+set quickscope " install IdeaVim-Quickscope
+set which-key " install Which-Kwy
+
+"" quickscope
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+"" which-key
+" leader
+let g:WhichKeyDesc_leader = "<leader> Leader key"
+let g:WhichKeyDesc_easymotion = "<leader><leader> Easymotion..."
+let g:WhichKeyDesc_last_buffer_toggle = "<leader>' Switch to previous buffer"
+
+" buffer
+let g:WhichKeyDesc_buffer = "<leader>b Buffer..."
+let g:WhichKeyDesc_buffer_open = "<leader>bb Switcher"
+let g:WhichKeyDesc_buffer_close = "<leader>bx Close content"
+
+" code
+let g:WhichKeyDesc_code = "<leader>c Code..."
+let g:WhichKeyDesc_code_action = "<leader>ca Intention action"
+let g:WhichKeyDesc_code_reformat = "<leader>cf Reformat code"
+let g:WhichKeyDesc_code_inline_hints = "<leader>ch Inline hints"
+let g:WhichKeyDesc_code_imports = "<leader>ci Organize imports"
+let g:WhichKeyDesc_code_paragraph = "<leader>cp Fill paragraph"
+let g:WhichKeyDesc_code_run = "<leader>cr Run configuration"
+let g:WhichKeyDesc_code_scratch = "<leader>cs Scratch file"
+
+" debug
+let g:WhichKeyDesc_debug = "<leader>d Debug..."
+let g:WhichKeyDesc_debug_run = "<leader>dr Run debug configuration"
+
+" find
+let g:WhichKeyDesc_find = "<leader>f Find..."
+let g:WhichKeyDesc_find_file_tree = "<leader>fe File tree"
+let g:WhichKeyDesc_find_file = "<leader>ff Go to file"
+let g:WhichKeyDesc_find_everywhere = "<leader>fg Search everywhere"
+let g:WhichKeyDesc_find_recent = "<leader>fr Recent files"
+let g:WhichKeyDesc_find_symbol = "<leader>fs Go to symbol"
+
+" refactor
+let g:WhichKeyDesc_refactor = "<leader>r Refactor..."
+let g:WhichKeyDesc_refactor_field = "<leader>rf Introduce field"
+let g:WhichKeyDesc_refactor_quicklist = "<leader>rl Quicklist"
+let g:WhichKeyDesc_refactor_method = "<leader>rm Extract method"
+let g:WhichKeyDesc_refactor_rename = "<leader>rr Rename element"
+let g:WhichKeyDesc_refactor_signature = "<leader>rs Change signature"
+let g:WhichKeyDesc_refactor_variable = "<leader>rv Introduce variable"
+
+" test
+let g:WhichKeyDesc_test = "<leader>t Test..."
+let g:WhichKeyDesc_test_run = "<leader>tf Run function / class"
+let g:WhichKeyDesc_test_goto = "<leader>tg Go to test"
+
+" window
+let g:WhichKeyDesc_window = "<leader>w Window..."
+let g:WhichKeyDesc_window_distraction_free = "<leader>wd Distraction free mode"
+let g:WhichKeyDesc_window_split_h = "<leader>wh Split horizontally"
+let g:WhichKeyDesc_window_swap_group = "<leader>wm Move Editor To Other Split"
+let g:WhichKeyDesc_window_unsplit = "<leader>wo Close other splits"
+let g:WhichKeyDesc_window_split_v = "<leader>wv Split vertically"
+let g:WhichKeyDesc_window_zen = "<leader>wz Zen mode"
+
+"""" Keymaps
+"""" ------------------------------------------------------
+
+inoremap <C-j> :action PopupMenu-selectNext<CR>
+inoremap <C-k> :action PopupMenu-selectPrev<CR>
+inoremap <C-y> :action EditorChooseLookupItem<CR>
+
+nnoremap <A-k> :action MoveLineUp<CR>
+nnoremap <A-j> :action MoveLineDown<CR>
+
+nnoremap <A-h> :action MoveElementLeft<CR>
+nnoremap <A-l> :action MoveElementRight<CR>
+
+nnoremap <A-K> :action MoveStatementUp<CR>
+nnoremap <A-J> :action MoveStatementDown<CR>
+
+
+"" navigation
+" buffer
+nnoremap ]b :tabnext<CR>
+nnoremap [b :tabprev<CR>
+" function navigation
+nnoremap ]f :action MethodDown<CR>
+nnoremap [f :action MethodUp<CR>
+" diagnostics
+nnoremap ]d :action GotoNextError<CR>
+nnoremap [d :action GotoPreviousError<CR>
+" splits
+map <C-h> <C-w>h
+map <C-k> <C-w>k
+map <C-j> <C-w>j
+map <C-l> <C-w>l
+
+" find references
+nnoremap gr :action FindUsages<CR>
+" goto implementation
+nnoremap gi :action GotoImplementation<CR>
+
+" keep line in center on scrolling
+map <C-d> <C-d>zz
+map <C-u> <C-u>zz
+
+" clear search
+nnoremap <Esc><Esc> :nohlsearch<CR>
+
+" single character deletes? to the void!
+nnoremap x "_x
+
+" show quick signature
+inoremap <C-s> :action ParameterInfo<CR>
+
+
+"""" Some useful leader mappings
+
+" general stuff of awesomeness
+map <leader>' <C-^>
+
+" buffer actions
+map <leader>bb <Action>(Switcher)
+map <leader>bx <Action>(CloseContent)
+
+" code action
+map <leader>ca <Action>(ShowIntentionActions)
+map <leader>cf <Action>(ReformatCode)
+map <leader>ch <Action>(ToggleInlineHintsAction)
+map <leader>ci <Action>(OptimizeImports)
+map <leader>cp <Action>(FillParagraph)
+map <leader>cr <Action>(ChooseRunConfiguration)
+map <leader>cs <Action>(NewScratchFile)
+
+" debug action
+map <leader>dr <Action>(ChooseDebugConfiguration)
+
+" find / search action
+map <leader>fe :NERDTreeToggle<CR>
+map <leader>ff <Action>(GotoFile)
+map <leader>fg <Action>(SearchEverywhere)
+map <leader>fr <Action>(RecentFiles)
+map <leader>fs <Action>(GotoSymbol)
+
+" refactor
+map <leader>rf <Action>(IntroduceField)
+map <leader>rl <Action>(Refactorings.QuickListPopupAction)
+map <leader>rm <Action>(ExtractMethod)
+map <leader>rr <Action>(RenameElement)
+map <leader>rs <Action>(ChangeSignature)
+map <leader>rv <Action>(IntroduceVariable)
+
+" test actions
+map <leader>tf <Action>(RunClass)
+map <leader>tg <Action>(GotoTest)
+
+" window actions
+map <leader>wd <Action>(ToggleDistractionFreeMode)
+map <leader>wh <Action>(SplitHorizontally)
+map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+map <leader>wo <Action>(Unsplit)
+map <leader>wv <Action>(SplitVertically)
+map <leader>wz <Action>(ToggleZenMode)
