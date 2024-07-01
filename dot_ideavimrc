@@ -103,14 +103,14 @@ inoremap <C-j> :action PopupMenu-selectNext<CR>
 inoremap <C-k> :action PopupMenu-selectPrev<CR>
 inoremap <C-y> :action EditorChooseLookupItem<CR>
 
-nnoremap <A-k> :action MoveLineUp<CR>
-nnoremap <A-j> :action MoveLineDown<CR>
+noremap <A-k> :action MoveLineUp<CR>
+noremap <A-j> :action MoveLineDown<CR>
 
-nnoremap <A-h> :action MoveElementLeft<CR>
-nnoremap <A-l> :action MoveElementRight<CR>
+noremap <A-h> :action MoveElementLeft<CR>
+noremap <A-l> :action MoveElementRight<CR>
 
-nnoremap <A-K> :action MoveStatementUp<CR>
-nnoremap <A-J> :action MoveStatementDown<CR>
+noremap <A-K> :action MoveStatementUp<CR>
+noremap <A-J> :action MoveStatementDown<CR>
 
 
 "" navigation

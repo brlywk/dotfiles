@@ -10,7 +10,7 @@ end
 config.color_scheme = "tokyonight_night"
 
 -- change window decoration
-config.window_decorations = "RESIZE"
+config.window_decorations = "TITLE | RESIZE"
 config.window_background_opacity = 0.96
 config.macos_window_background_blur = 40
 
