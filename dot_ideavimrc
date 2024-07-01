@@ -11,7 +11,7 @@ set showmode
 set showcmd
 set visualbell
 " use system clipboard
-set clipboard+=unnammed
+set clipboard+=unnamed
 
 "" Some convenient settings
 set matchpairs " match character pairs with %
@@ -63,6 +63,7 @@ let g:WhichKeyDesc_code_scratch = "<leader>cs Scratch file"
 
 " debug
 let g:WhichKeyDesc_debug = "<leader>d Debug..."
+let g:WhichKeyDesc_debug_breakpoint = "<leader>db Line breakpoint"
 let g:WhichKeyDesc_debug_run = "<leader>dr Run debug configuration"
 
 " find
@@ -84,7 +85,7 @@ let g:WhichKeyDesc_refactor_variable = "<leader>rv Introduce variable"
 
 " test
 let g:WhichKeyDesc_test = "<leader>t Test..."
-let g:WhichKeyDesc_test_run = "<leader>tf Run function / class"
+let g:WhichKeyDesc_test_run = "<leader>tr Run function / class"
 let g:WhichKeyDesc_test_goto = "<leader>tg Go to test"
 
 " window
@@ -123,6 +124,7 @@ nnoremap [f :action MethodUp<CR>
 " diagnostics
 nnoremap ]d :action GotoNextError<CR>
 nnoremap [d :action GotoPreviousError<CR>
+
 " splits
 map <C-h> <C-w>h
 map <C-k> <C-w>k
@@ -147,6 +149,9 @@ nnoremap x "_x
 " show quick signature
 inoremap <C-s> :action ParameterInfo<CR>
 
+" show error message in popup
+nnoremap <S-l> :action ShowErrorDescription<CR>
+
 
 """" Some useful leader mappings
 
@@ -168,6 +173,7 @@ map <leader>cs <Action>(NewScratchFile)
 
 " debug action
 map <leader>dr <Action>(ChooseDebugConfiguration)
+map <leader>db <Action>(ToggleLineBreakpoint)
 
 " find / search action
 map <leader>fe :NERDTreeToggle<CR>
@@ -185,7 +191,7 @@ map <leader>rs <Action>(ChangeSignature)
 map <leader>rv <Action>(IntroduceVariable)
 
 " test actions
-map <leader>tf <Action>(RunClass)
+map <leader>tr <Action>(RunClass)
 map <leader>tg <Action>(GotoTest)
 
 " window actions
