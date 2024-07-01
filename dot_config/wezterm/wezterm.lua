@@ -7,7 +7,7 @@ end
 
 -- [[ GENERAL SETTINGS ]] --
 
-config.color_scheme = "tokyonight_night"
+config.color_scheme = "Catppuccin Mocha"
 
 -- change window decoration
 config.window_decorations = "TITLE | RESIZE"
@@ -44,13 +44,13 @@ config.window_padding = {
 config.foreground_text_hsb = {
 	hue = 1.0,
 	saturation = 1.0,
-	brightness = 1.2,
+	brightness = 1.25,
 }
 
 -- some custom colors
 local colors = {
-	command_bg = "#292e42",
-	command_fg = "#c0caf5",
+	command_bg = "#181825",
+	command_fg = "#cdd6f4",
 }
 
 -- change command palette look
