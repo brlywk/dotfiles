@@ -33,5 +33,3 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
     eval "$(oh-my-posh init zsh --config $ZSHRC_DIR/omp.toml)"
 fi
 
-# bun completions
-[ -s "/Users/christoph/.bun/_bun" ] && source "/Users/christoph/.bun/_bun"

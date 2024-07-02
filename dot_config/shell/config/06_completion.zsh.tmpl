@@ -2,8 +2,11 @@
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit 
 
+
+{{ if eq .usage "personal" }}
 # Enable completion for 1password cli
-# eval "$(op completion zsh)"; compdef _op op
+eval "$(op completion zsh)"; compdef _op op
+{{- end }}
 
 
 # Completion should work case insensitive
