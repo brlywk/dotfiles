@@ -28,7 +28,5 @@ zinit cdreplay -q
 # Load Zoxide and overwrite cd command
 eval "$(zoxide init zsh --cmd cd)"
 
-# Use oh-my-posh shell
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-    eval "$(oh-my-posh init zsh --config $ZSHRC_DIR/omp.toml)"
-fi
+# Get on board the starship
+eval "$(starship init zsh)"

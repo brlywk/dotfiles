@@ -3,18 +3,18 @@
 # Packages to install
 packages=(
     # General tools
+    starship
+    zoxide
     wget
     curl
     git
     lazygit
-    zoxide
     fzf
     fd
     ripgrep
     eza
     bat
     jq
-    jandedobbeleer/oh-my-posh/oh-my-posh
 
     # Important tools
     neovim
@@ -25,6 +25,7 @@ packages=(
 
     # Terminal
     wezterm
+    alacritty
 
     # Languages
     go
