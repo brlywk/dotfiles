@@ -19,14 +19,35 @@ config.initial_cols = 150
 config.initial_rows = 40
 
 -- deactivate tab bar fully
-config.enable_tab_bar = false
+config.enable_tab_bar = true
+config.use_fancy_tab_bar = false
+config.tab_bar_at_bottom = true
+config.hide_tab_bar_if_only_one_tab = true
+
+config.colors = {
+	tab_bar = {
+		background = "rgba(0, 0, 0, 0)",
+		active_tab = {
+			bg_color = "#74c7ec",
+			fg_color = "rgba(0,0,0,0)",
+		},
+		inactive_tab = {
+			bg_color = "rgba(0,0,0,0)",
+			fg_color = "#cdd6f4",
+		},
+		new_tab = {
+			bg_color = "rgba(0,0,0,0)",
+			fg_color = "#74c7ec",
+		},
+	},
+}
 
 -- don't ever beep
 config.audible_bell = "Disabled"
 
 -- font settings (no ligatures)
 config.font = wezterm.font({
-	family = "Hack Nerd Font",
+	family = "JetBrainsMono Nerd Font",
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 })
 
@@ -44,7 +65,7 @@ config.window_padding = {
 config.foreground_text_hsb = {
 	hue = 1.0,
 	saturation = 1.0,
-	brightness = 1.25,
+	brightness = 1.26,
 }
 
 -- some custom colors
@@ -77,32 +98,32 @@ local mods = {
 	c = "CTRL",
 	all = "CMD | CTRL | ALT",
 }
-local tmux = { key = "a", mods = "CTRL" }
-
--- quick map tmux actions
-local tmux_action = function(key)
-	return action.Multiple({
-		action.SendKey(tmux),
-		action.SendKey({ key = key }),
-	})
-end
+-- local tmux = { key = "a", mods = "CTRL" }
+--
+-- -- quick map tmux actions
+-- local tmux_action = function(key)
+-- 	return action.Multiple({
+-- 		action.SendKey(tmux),
+-- 		action.SendKey({ key = key }),
+-- 	})
+-- end
 
 -- map CMD-<number> to corresponding tmux tab switch key
-local number_keys = function()
-	local key_table = {}
-
-	for i = 0, 9 do
-		local key = tostring(i)
-
-		table.insert(key_table, {
-			key = key,
-			mods = mods.g,
-			action = tmux_action(key),
-		})
-	end
-
-	return table.unpack(key_table)
-end
+-- local number_keys = function()
+-- 	local key_table = {}
+--
+-- 	for i = 0, 9 do
+-- 		local key = tostring(i)
+--
+-- 		table.insert(key_table, {
+-- 			key = key,
+-- 			mods = mods.g,
+-- 			action = tmux_action(key),
+-- 		})
+-- 	end
+--
+-- 	return table.unpack(key_table)
+-- end
 
 -- set leader key for wezterm itself
 config.leader = { key = "`", mods = mods.c, timeout_milliseconds = 1000 }
@@ -124,32 +145,32 @@ config.keys = {
 
 	-- Rebind default key combos to tmux commands
 	-- open sesh
-	{
-		key = "k",
-		mods = mods.g,
-		action = tmux_action("f"),
-	},
+	-- {
+	-- 	key = "k",
+	-- 	mods = mods.g,
+	-- 	action = tmux_action("f"),
+	-- },
 	-- session overview
-	{
-		key = "o",
-		mods = mods.g,
-		action = tmux_action("s"),
-	},
+	-- {
+	-- 	key = "o",
+	-- 	mods = mods.g,
+	-- 	action = tmux_action("s"),
+	-- },
 	-- create new window
-	{
-		key = "t",
-		mods = mods.g,
-		action = tmux_action("c"),
-	},
+	-- {
+	-- 	key = "t",
+	-- 	mods = mods.g,
+	-- 	action = tmux_action("c"),
+	-- },
 	-- close active window
-	{
-		key = "w",
-		mods = mods.g,
-		action = tmux_action("x"),
-	},
+	-- {
+	-- 	key = "w",
+	-- 	mods = mods.g,
+	-- 	action = tmux_action("x"),
+	-- },
 
 	-- map number keys
-	number_keys(),
+	-- number_keys(),
 }
 
 return config

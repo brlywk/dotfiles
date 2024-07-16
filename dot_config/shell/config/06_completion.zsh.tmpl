@@ -2,12 +2,13 @@
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit 
 
-
 {{ if eq .usage "personal" }}
 # Enable completion for 1password cli
 eval "$(op completion zsh)"; compdef _op op
 {{- end }}
 
+# bun completions
+[ -s "/Users/christoph/.bun/_bun" ] && source "/Users/christoph/.bun/_bun"
 
 # Completion should work case insensitive
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
