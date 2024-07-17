@@ -10,4 +10,9 @@
     pure = pull --rebase
 {{ if eq .usage "work" }}
 {{ (bitwarden "item" "Git Config - 01").notes }}
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
 {{- end }}
