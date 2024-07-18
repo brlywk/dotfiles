@@ -7,6 +7,7 @@ end
 
 -- [[ GENERAL SETTINGS ]] --
 
+-- TODO: Modify here for config theme switcher
 config.color_scheme = "Catppuccin Mocha"
 
 -- change window decoration
@@ -18,12 +19,14 @@ config.macos_window_background_blur = 40
 config.initial_cols = 150
 config.initial_rows = 40
 
--- deactivate tab bar fully
+-- setup tabs
 config.enable_tab_bar = true
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
 config.hide_tab_bar_if_only_one_tab = true
 
+-- TODO: Modify here for config theme switcher
+-- tabs colors
 config.colors = {
 	tab_bar = {
 		background = "rgba(0, 0, 0, 0)",
@@ -68,6 +71,7 @@ config.foreground_text_hsb = {
 	brightness = 1.26,
 }
 
+-- TODO: Modify here for config theme switcher
 -- some custom colors
 local colors = {
 	command_bg = "#181825",
@@ -98,37 +102,22 @@ local mods = {
 	c = "CTRL",
 	all = "CMD | CTRL | ALT",
 }
--- local tmux = { key = "a", mods = "CTRL" }
---
--- -- quick map tmux actions
--- local tmux_action = function(key)
--- 	return action.Multiple({
--- 		action.SendKey(tmux),
--- 		action.SendKey({ key = key }),
--- 	})
--- end
-
--- map CMD-<number> to corresponding tmux tab switch key
--- local number_keys = function()
--- 	local key_table = {}
---
--- 	for i = 0, 9 do
--- 		local key = tostring(i)
---
--- 		table.insert(key_table, {
--- 			key = key,
--- 			mods = mods.g,
--- 			action = tmux_action(key),
--- 		})
--- 	end
---
--- 	return table.unpack(key_table)
--- end
+local multiMod = function(...)
+	local modArgs = { ... }
+	return table.concat(modArgs, "|")
+end
 
 -- set leader key for wezterm itself
-config.leader = { key = "`", mods = mods.c, timeout_milliseconds = 1000 }
+config.leader = { key = "a", mods = mods.c, timeout_milliseconds = 500 }
 
 config.keys = {
+	-- Pass leader through as well
+	{
+		key = "a",
+		mods = multiMod(mods.l, mods.c),
+		action = action.SendKey({ key = "a", mods = mods.c }),
+	},
+
 	-- Open Command Palette
 	{
 		key = "p",
@@ -142,35 +131,6 @@ config.keys = {
 		mods = mods.all,
 		action = action.CloseCurrentTab({ confirm = false }),
 	},
-
-	-- Rebind default key combos to tmux commands
-	-- open sesh
-	-- {
-	-- 	key = "k",
-	-- 	mods = mods.g,
-	-- 	action = tmux_action("f"),
-	-- },
-	-- session overview
-	-- {
-	-- 	key = "o",
-	-- 	mods = mods.g,
-	-- 	action = tmux_action("s"),
-	-- },
-	-- create new window
-	-- {
-	-- 	key = "t",
-	-- 	mods = mods.g,
-	-- 	action = tmux_action("c"),
-	-- },
-	-- close active window
-	-- {
-	-- 	key = "w",
-	-- 	mods = mods.g,
-	-- 	action = tmux_action("x"),
-	-- },
-
-	-- map number keys
-	-- number_keys(),
 }
 
 return config

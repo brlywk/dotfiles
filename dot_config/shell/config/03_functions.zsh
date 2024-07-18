@@ -22,14 +22,3 @@ function update_all() {
     echo "\n### Update homebrew installed software"
     brew upgrade
 }
-
-# check if tmux has a 'default' session and connect to it (or create it)
-function tmux_default_session() {
-    local default_session="default"
-
-    if tmux has-session -t "$default_session" 2>/dev/null; then
-        tmux attach-session -t "$default_session"
-    else
-        tmux new-session -s "$default_session"
-    fi
-}

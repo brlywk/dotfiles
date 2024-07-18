@@ -18,8 +18,5 @@ alias cat=bat
 # Some color
 alias ls=eza
 
-# run tmux
-alias rt="tmux_default_session"
-
 # Chezmoi
 alias cz=chezmoi

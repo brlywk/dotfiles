@@ -19,13 +19,13 @@ packages=(
     # Important tools
     neovim
     luarocks
-    tmux
     gum
-    joshmedeski/sesh/sesh
+    # tmux
+    # joshmedeski/sesh/sesh
 
     # Terminal
     wezterm
-    alacritty
+    # alacritty
 
     # Languages
     go
