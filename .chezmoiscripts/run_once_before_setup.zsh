@@ -20,12 +20,9 @@ packages=(
     neovim
     luarocks
     gum
-    # tmux
-    # joshmedeski/sesh/sesh
 
     # Terminal
     wezterm
-    # alacritty
 
     # Languages
     go
@@ -41,6 +38,9 @@ packages=(
     yazi
     jstkdng/programs/ueberzugpp
     tokei
+
+    # Some fun stuff
+    slides
 )
 
 # Install all the packages!

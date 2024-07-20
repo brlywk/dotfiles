@@ -51,6 +51,7 @@ config.audible_bell = "Disabled"
 -- font settings (no ligatures)
 config.font = wezterm.font({
 	family = "JetBrainsMono Nerd Font",
+	weight = "Medium",
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 })
 
@@ -100,8 +101,8 @@ local mods = {
 	g = "CMD", -- GUI  (as used in ZMK)
 	m = "ALT", -- Meta (alt, opt)
 	c = "CTRL",
-	all = "CMD | CTRL | ALT",
 }
+
 local multiMod = function(...)
 	local modArgs = { ... }
 	return table.concat(modArgs, "|")
@@ -111,7 +112,7 @@ end
 config.leader = { key = "a", mods = mods.c, timeout_milliseconds = 500 }
 
 config.keys = {
-	-- Pass leader through as well
+	-- Pass leader through
 	{
 		key = "a",
 		mods = multiMod(mods.l, mods.c),
@@ -120,17 +121,97 @@ config.keys = {
 
 	-- Open Command Palette
 	{
-		key = "p",
+		key = "a",
 		mods = mods.l,
 		action = action.ActivateCommandPalette,
 	},
 
-	-- we might need a way to close the window
+	-- Some tab actions
+	{
+		key = "c",
+		mods = mods.l,
+		action = action.SpawnTab("DefaultDomain"),
+	},
 	{
 		key = "w",
-		mods = mods.all,
+		mods = mods.g,
 		action = action.CloseCurrentTab({ confirm = false }),
 	},
+	{
+		key = "x",
+		mods = mods.l,
+		action = action.CloseCurrentTab({ confirm = false }),
+	},
+	{
+		key = "n",
+		mods = mods.l,
+		action = action.ActivateTabRelative(1),
+	},
+	{
+		key = "p",
+		mods = mods.l,
+		action = action.ActivateTabRelative(-1),
+	},
+
+	-- Panes
+	{
+		key = "v",
+		mods = mods.l,
+		action = action.SplitVertical({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "h",
+		mods = mods.l,
+		action = action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	},
+	{
+		key = "w",
+		mods = mods.l,
+		action = action.CloseCurrentPane({ confirm = false }),
+	},
+
+	{
+		key = "h",
+		mods = multiMod(mods.l, mods.c),
+		action = action.ActivatePaneDirection("Left"),
+	},
+	{
+		key = "j",
+		mods = multiMod(mods.l, mods.c),
+		action = action.ActivatePaneDirection("Down"),
+	},
+	{
+		key = "k",
+		mods = multiMod(mods.l, mods.c),
+		action = action.ActivatePaneDirection("Up"),
+	},
+	{
+		key = "l",
+		mods = multiMod(mods.l, mods.c),
+		action = action.ActivatePaneDirection("Right"),
+	},
+
+	{
+		key = ">",
+		mods = mods.l,
+		action = action.RotatePanes("Clockwise"),
+	},
+	{
+		key = "<",
+		mods = mods.l,
+		action = action.RotatePanes("CounterClockwise"),
+	},
+
+	-- TODO: add scrolling and copy / pasting
 }
+
+-- set leader + 0..9 to switch tabs
+for i = 0, 9 do
+	table.insert(config.keys, {
+		key = tostring(i),
+		mods = mods.l,
+		action = action.ActivateTab(i - 1),
+	})
+end
 
 return config
