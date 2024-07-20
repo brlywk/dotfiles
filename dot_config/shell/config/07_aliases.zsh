@@ -15,8 +15,9 @@ alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/co
 # Cat becomes bat
 alias cat=bat
 
-# Some color
+# Better ls-ing
 alias ls=eza
+alias tree="ls -T"
 
 # Chezmoi
 alias cz=chezmoi

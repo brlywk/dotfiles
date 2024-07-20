@@ -8,39 +8,39 @@ packages=(
     wget
     curl
     git
-    lazygit
     fzf
     fd
     ripgrep
     eza
     bat
     jq
+    chezmoi
 
     # Important tools
-    neovim
     luarocks
+    neovim
     gum
-    # tmux
-    # joshmedeski/sesh/sesh
 
     # Terminal
     wezterm
-    # alacritty
 
-    # Languages
+    # Dev stuff
     go
     rustup
     nvm
+    lazygit
+    tokei
 
     # Services
     turso
     docker
 
     # Some more useful tools
-    tree
     yazi
     jstkdng/programs/ueberzugpp
-    tokei
+
+    # Some fun stuff
+    slides
 )
 
 # Install all the packages!
