@@ -11,13 +11,18 @@ font-feature = -liga
 font-feature = -dlig
 
 # window styling
-macos-titlebar-style = tabs
 window-padding-y = 0 
 background-opacity = 0.98
 background-blur-radius = 20
+
 # start maximized by using ridiculously high window size
 window-height = 9999
 window-width = 9999
 
 # general behaviour
 confirm-close-surface = false
+
+# macOS stuff
+macos-titlebar-style = tabs
+macos-option-as-alt = true
+link-url = true
