@@ -21,6 +21,11 @@ window-width = 9999
 
 # general behaviour
 confirm-close-surface = false
+# use default catppuccin-mocha colors for cursor,
+# as the theme seems to use the incorrect fg color
+cursor-color = #cdd6f4
+cursor-text = #1e1e2e
+# cursor-invert-fg-bg = true
 
 # macOS stuff
 macos-titlebar-style = tabs
